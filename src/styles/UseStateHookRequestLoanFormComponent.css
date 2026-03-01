@@ -1,0 +1,83 @@
+.divFormWrapper
+{
+    text-align: -webkit-center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.frmRequestLoan
+{
+    width: 300px;
+    background-color: cornflowerblue;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 20px;
+    font-size: 18px;
+    color: white;
+    text-align: left;
+    border: 1px solid gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.2),;
+}
+
+.label
+{
+    font-size: 18px;
+    color: white;
+    margin: 5px;
+    width: 100%;
+}
+.inputField
+{
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    font-size: 18px;
+    color: black;
+    width: 100%;
+}
+
+.btnSubmit
+{
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(255 157 253);
+    border-color: gray;
+    border-width: 1px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: white;
+    
+
+
+}
+.btnSubmit:disabled
+{
+    background-color: grey;
+    
+
+
+}
+.btnReset
+{
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(54, 54, 54);
+    border-color: gray;
+    border-width: 1px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: white
+
+}
+
+hr
+{
+    width: 100%;
+
+}

@@ -1,0 +1,56 @@
+.Products_List_Item
+{
+    background-color: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  cursor: pointer;
+
+}
+
+.Products_List_Item:hover
+{
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+    background-color:salmon;
+
+
+
+}
+.ProductName
+{
+    font-size: 18px;
+    font-weight: 600;
+    color: #282c34;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+
+}
+.ProductPrice
+{
+
+    font-size: 14px;
+    font-weight: 400;
+    color: #282c34;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+.ProductDescription
+{
+    font-size: 14px;
+    font-weight: 400;
+    color: #282c34;
+    margin-top: 8px;
+    margin-bottom: 8px;
+
+
+
+}
