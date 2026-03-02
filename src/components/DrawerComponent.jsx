@@ -89,6 +89,7 @@ export default function DrawerComponent({drawerWidth,isDrawerOpen, closeDrawerCa
      const theme = useTheme();
 
     const [materialUIMenuOpen, setMaterialUIMenuOpen] = React.useState(false);
+    const [tailwindcssMenuOpen, setTailwindcssMenuOpen] = React.useState(false);
     const [useStateMenuOpen, setUseStateMenuOpen] = React.useState(false);
     const [useContextMenuOpen, setUseContextMenuOpen] = React.useState(false);
     const [useEffectMenuOpen, setUseEffectMenuOpen] = React.useState(false);
@@ -161,6 +162,7 @@ export default function DrawerComponent({drawerWidth,isDrawerOpen, closeDrawerCa
                 {renderMenuItem("/products", <InventoryIcon />, "Products")}
 
                 {renderCollapseMenu(materialUIMenuOpen, setMaterialUIMenuOpen, [{ href: "/materialUI", text: "Material UI" }], <AppsIcon />, "Material UI")}
+                {renderCollapseMenu(tailwindcssMenuOpen, setTailwindcssMenuOpen, [{ href: "/tailwindcss", text: "tailwind" }], <AppsIcon />, "TailWind Css")}
                 {renderCollapseMenu(useStateMenuOpen, setUseStateMenuOpen, [{ href: "/useState", text: "useState" },{ href: "/useState/arrays", text: "With Arrays" },{ href: "/useState/forms", text: "With Forms" },{ href: "/useState/loanForm", text: "Loan Form" },], <WebhookIcon />, "Hook (useState)")}
                 {renderCollapseMenu(useContextMenuOpen, setUseContextMenuOpen, [{ href: "/useContext", text: "UseContext" }], <WebhookIcon />, "Hook (useContext)")}
                 {renderCollapseMenu(useEffectMenuOpen, setUseEffectMenuOpen, [{ href: "/useEffect", text: "UseEffect" }], <WebhookIcon />, "Hook (useEffect)")}
