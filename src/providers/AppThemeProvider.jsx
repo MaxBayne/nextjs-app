@@ -7,24 +7,39 @@ import { lightTheme, darkTheme } from "@/themes/muiThemes";
 
 const THEME_KEY = "app-theme-mode";
 
-export default function AppThemeProvider({ children }) {
+export default function AppThemeProvider({ children })
+{
   const [mode, setMode] = useState("light"); // safe default
   const [mounted, setMounted] = useState(false);
 
   // Read from localStorage AFTER mount
   useEffect(() => {
     const storedMode = localStorage.getItem(THEME_KEY);
-    if (storedMode === "light" || storedMode === "dark") {
+    if (storedMode === "light" || storedMode === "dark") 
+    {
       setMode(storedMode);
     }
     setMounted(true);
   }, []);
 
   // Save to localStorage when mode changes
-  useEffect(() => {
-    if (mounted) {
+  useEffect(() => 
+  {
+      if (!mounted) return;
+    
       localStorage.setItem(THEME_KEY, mode);
-    }
+
+      const root = document.documentElement;
+
+      if (mode === "dark") 
+      {
+        root.classList.add("dark");
+      } 
+      else 
+      {
+        root.classList.remove("dark");
+      }
+    
   }, [mode, mounted]);
 
   const toggleTheme = () => {
