@@ -1,160 +1,128 @@
 'use client';
 
-//Import Styles
 import '@/styles/ProductsListComponent.css'
-
-//Import React Library
 import * as React from 'react';
 
-//Import Custom Hooks
-import {useProductsHook} from '@/hooks/useProductsHook.js';
-import {useToastHook} from '@/hooks/useToastHook.js';
+import { useProductsHook } from '@/hooks/useProductsHook.js';
+import { useToastHook } from '@/hooks/useToastHook.js';
 
-
-//Import Material UI Icons
 import AddIcon from '@mui/icons-material/Add';
 
-//Import Material UI Components
-import Box from '@mui/material/Box';
-import Stack from '@mui/material/Stack';
-import Typography from '@mui/material/Typography';
-import Fab from '@mui/material/Fab';
-
-
-//Import Custom Components
 import ProductCardComponent from './ProductCardComponent.jsx'
 import NewProductModalComponent from './NewProductModalComponent.jsx';
 import EditProductModalComponent from './EditProductModalComponent.jsx';
 import RemoveProductModalComponent from './RemoveProductModalComponent.jsx';
 
-export default function ProductsListComponent()
-{
-    //get products data from global context using custom hook 
-    const { products, addProduct,editProduct,removeProduct } = useProductsHook();
+export default function ProductsListComponent() {
+    const { products, addProduct, editProduct, removeProduct } = useProductsHook();
+    const { showToast } = useToastHook();
 
-    //get toast Context from global context using custom hook
-    const {showToast} = useToastHook();
-
-    //create state for selected product
     const [selectedProductState, setSelectedProductState] = React.useState(null);
 
-
-    //Create Product Modal --------------------------
-
+    // Create Product Modal
     const [openNewProductModalState, setOpenNewProductModalState] = React.useState(false);
 
-    function openModalNewProduct(e)
-    {
-        e.currentTarget.blur(); // remove focus
+    function openModalNewProduct(e) {
+        e.currentTarget.blur();
         setOpenNewProductModalState(true);
     }
-    function closeModalNewProduct()
-    {
+    function closeModalNewProduct() {
         setOpenNewProductModalState(false);
     }
-    function handleNewProduct(newProduct)
-    {
-
-        //add new product to current Context state
-        addProduct(newProduct); // 🔥 updates context state
-
+    function handleNewProduct(newProduct) {
+        addProduct(newProduct);
         closeModalNewProduct();
-
-        showToast(`${newProduct.name} Product Added Succesfully`,"success",3000,"top","center");
+        showToast(`${newProduct.name} Product Added Succesfully`, "success", 3000, "top", "center");
     }
 
-    //Edit Product Modal --------------------------
-
+    // Edit Product Modal
     const [openEditProductModalState, setOpenEditProductModalState] = React.useState(false);
 
-    function openModalEditProduct(product)
-    {
+    function openModalEditProduct(product) {
         setSelectedProductState(product);
         setOpenEditProductModalState(true);
     }
-    function closeModalEditProduct()
-    {
+    function closeModalEditProduct() {
         setOpenEditProductModalState(false);
-
         setSelectedProductState(null);
     }
-    function handleEditProduct(editedProduct)
-    {
-        //update edited product inside current Context state
-        editProduct(editedProduct); // 🔥 updates context state
-
+    function handleEditProduct(editedProduct) {
+        editProduct(editedProduct);
         closeModalEditProduct();
-
-        showToast(`${editedProduct.name} Product has been Modified`,"success",3000,"top","center");
+        showToast(`${editedProduct.name} Product has been Modified`, "success", 3000, "top", "center");
     }
 
-    //Remove Product Modal --------------------------
-
+    // Remove Product Modal
     const [openRemoveProductModalState, setOpenRemoveProductModalState] = React.useState(false);
 
-    function openModalRemoveProduct(product)
-    {
+    function openModalRemoveProduct(product) {
         setSelectedProductState(product);
         setOpenRemoveProductModalState(true);
     }
-    function closeModalRemoveProduct()
-    {
+    function closeModalRemoveProduct() {
         setOpenRemoveProductModalState(false);
-
         setSelectedProductState(null);
     }
-    function handleRemoveProduct(removedProduct)
-    {
-        //update edited product inside current Context state
-        removeProduct(removedProduct); // 🔥 remove item and updates context state
-
+    function handleRemoveProduct(removedProduct) {
+        removeProduct(removedProduct);
         closeModalRemoveProduct();
-
-        showToast(`${removedProduct.name} Product has been Removed`,"success",3000,"top","center");
+        showToast(`${removedProduct.name} Product has been Removed`, "success", 3000, "top", "center");
     }
 
-
-
-    //convert products to Card items [ProductCardComponent]
-    let productsJsx=products.map((product) => 
-        {
-            return(
-                    <ProductCardComponent key={product.id} product={product} openEditModalCallback={openModalEditProduct} openRemoveModalCallback={openModalRemoveProduct} />
-            )
-        });
+    const productsJsx = products.map((product) => (
+        <ProductCardComponent
+            key={product.id}
+            product={product}
+            openEditModalCallback={openModalEditProduct}
+            openRemoveModalCallback={openModalRemoveProduct}
+        />
+    ));
 
     return (
         <>
-        
-        <Box sx={{ flexGrow: 1,height:'87vh' ,position:'relative'}}>
-            <Typography variant="h5" component="div">Products List</Typography>
-            <br/>
-            <Stack direction={{ xs: 'column', sm: 'row' , md:'row' }} spacing={{ xs: 1, sm: 2, md: 4}}>
-                { productsJsx }
-            </Stack>
+            <div className="relative flex-1" style={{ height: '87vh' }}>
 
-            <Fab onClick={openModalNewProduct} color="success" size="medium"  sx={{ position: 'absolute', bottom: 16, right: 16,  }}>
-                <AddIcon />
-            </Fab>
+                <h5 className="text-xl font-semibold text-gray-800 dark:text-gray-100">
+                    Products List
+                </h5>
 
-        </Box>
+                <br />
 
-        <NewProductModalComponent openModalState={openNewProductModalState} 
-                                  closeModalCallBack={closeModalNewProduct} 
-                                  onValidNewProductCallBack={handleNewProduct}/>
+                {/* Products Grid */}
+                <div className="flex flex-col sm:flex-row flex-wrap gap-2 sm:gap-4">
+                    {productsJsx}
+                </div>
 
-        <EditProductModalComponent openModalState={openEditProductModalState}
-                                   closeModalCallBack={closeModalEditProduct} 
-                                   productForEdit={selectedProductState}
-                                   onValidEditProductCallBack={handleEditProduct} />
+                {/* FAB - Add Product */}
+                <button
+                    onClick={openModalNewProduct}
+                    aria-label="add product"
+                    className="absolute bottom-4 right-4 w-10 h-10 flex items-center justify-center bg-green-600 hover:bg-green-700 active:scale-95 text-white rounded-full shadow-lg transition-all duration-150"
+                >
+                    <AddIcon fontSize="small" />
+                </button>
 
-        <RemoveProductModalComponent openModalState={openRemoveProductModalState}
-                                   closeModalCallBack={closeModalRemoveProduct} 
-                                   productForRemove={selectedProductState}
-                                   onValidRemoveProductCallBack={handleRemoveProduct} />
+            </div>
 
-        
+            <NewProductModalComponent
+                openModalState={openNewProductModalState}
+                closeModalCallBack={closeModalNewProduct}
+                onValidNewProductCallBack={handleNewProduct}
+            />
 
+            <EditProductModalComponent
+                openModalState={openEditProductModalState}
+                closeModalCallBack={closeModalEditProduct}
+                productForEdit={selectedProductState}
+                onValidEditProductCallBack={handleEditProduct}
+            />
+
+            <RemoveProductModalComponent
+                openModalState={openRemoveProductModalState}
+                closeModalCallBack={closeModalRemoveProduct}
+                productForRemove={selectedProductState}
+                onValidRemoveProductCallBack={handleRemoveProduct}
+            />
         </>
     );
 }
