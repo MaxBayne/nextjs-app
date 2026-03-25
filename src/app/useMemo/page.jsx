@@ -1,4 +1,4 @@
-import UseMemoHookComponent from "@/components/UseMemoHookComponent.jsx";
+import UseMemoHookComponent from "@/components/pages/UseMemoHookComponent.jsx";
 
 
 export default function UseMemoHookPage()

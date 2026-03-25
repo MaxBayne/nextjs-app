@@ -1,4 +1,4 @@
-import UseContextHookComponent from "@/components/UseContextHookComponent.jsx";
+import UseContextHookComponent from "@/components/pages/UseContextHookComponent.jsx";
 
 
 export default function UseContextHookPage()

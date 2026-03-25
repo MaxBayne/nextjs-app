@@ -1,4 +1,4 @@
-import UseStateHookRequestLoanFormComponent from "@/components/UseStateHookRequestLoanFormComponent.jsx";
+import UseStateHookRequestLoanFormComponent from "@/components/pages/UseStateHookRequestLoanFormComponent.jsx";
 
 
 export default function UseStateHookRequestLoanFormPage()

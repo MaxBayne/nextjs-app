@@ -1,4 +1,4 @@
-import CssComponent from "@/components/CssComponent.jsx";
+import CssComponent from "@/components/pages/CssComponent.jsx";
 
 
 export default function CssPage()

@@ -1,4 +1,4 @@
-import WeatherComponent from "@/components/WeatherComponent.jsx";
+import WeatherComponent from "@/components/pages/WeatherComponent.jsx";
 
 
 export default function WeatherPage()

@@ -2,9 +2,9 @@
 
 import * as React from "react";
 
-import NavBarComponent from "@/components/NavBarComponent";
-import DrawerComponent from "@/components/DrawerComponent";
-import ContentComponent from "@/components/ContentComponent";
+import NavBarComponent from "@/components/custom/NavBarComponent";
+import DrawerComponent from "@/components/custom/DrawerComponent";
+import ContentComponent from "@/components/custom/ContentComponent";
 
 import AppThemeProvider from '@/providers/AppThemeProvider.jsx'
 import UserProvider from '@/providers/UserProvider.jsx'

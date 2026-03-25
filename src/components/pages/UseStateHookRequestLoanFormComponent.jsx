@@ -7,9 +7,9 @@ import '@/styles/UseStateHookRequestLoanFormComponent.css'
 import { useState } from 'react';
 
 //import custom components
-import ModalComponent from '@/components/ModalComponent.jsx';
-import InputTextFieldComponent from '@/components/InputTextFieldComponent.jsx';
-import InputPhoneFieldComponent from '@/components/InputPhoneFieldComponent.jsx';
+import ModalComponent from '@/components/custom/ModalComponent.jsx';
+import InputTextFieldComponent from '@/components/custom/InputTextFieldComponent.jsx';
+import InputPhoneFieldComponent from '@/components/custom/InputPhoneFieldComponent.jsx';
 
 
 export default function UseStateHookRequestLoanFormComponent()

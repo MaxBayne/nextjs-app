@@ -8,10 +8,10 @@ import { useToastHook } from '@/hooks/useToastHook.js';
 
 import AddIcon from '@mui/icons-material/Add';
 
-import ProductCardComponent from './ProductCardComponent.jsx'
-import NewProductModalComponent from './NewProductModalComponent.jsx';
-import EditProductModalComponent from './EditProductModalComponent.jsx';
-import RemoveProductModalComponent from './RemoveProductModalComponent.jsx';
+import ProductCardComponent from '@/components/custom/ProductCardComponent.jsx'
+import NewProductModalComponent from '@/components/custom/NewProductModalComponent.jsx';
+import EditProductModalComponent from '@/components/custom/EditProductModalComponent.jsx';
+import RemoveProductModalComponent from '@/components/custom/RemoveProductModalComponent.jsx';
 
 export default function ProductsListComponent() {
     const { products, addProduct, editProduct, removeProduct } = useProductsHook();

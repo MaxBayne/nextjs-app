@@ -1,4 +1,4 @@
-import ProductsListComponent from "@/components/ProductsListComponent.jsx";
+import ProductsListComponent from "@/components/pages/ProductsListComponent.jsx";
 
 export default function ProductsPage(){
     return (

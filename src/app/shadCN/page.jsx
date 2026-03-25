@@ -1,4 +1,4 @@
-import ShadCNComponent from "@/components/ShadCNComponent.jsx";
+import ShadCNComponent from "@/components/pages/ShadCNComponent.jsx";
 
 
 export default function ShadCNPage()

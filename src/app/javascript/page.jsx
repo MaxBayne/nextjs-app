@@ -1,4 +1,4 @@
-import JavaScriptComponent from "@/components/JavascriptComponent.jsx";
+import JavaScriptComponent from "@/components/pages/JavascriptComponent.jsx";
 
 
 export default function JavaScriptPage()

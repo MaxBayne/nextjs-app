@@ -1,4 +1,4 @@
-import UseEffectHookComponent from "@/components/UseEffectHookComponent.jsx";
+import UseEffectHookComponent from "@/components/pages/UseEffectHookComponent.jsx";
 
 
 export default function UseEffectHookPage()

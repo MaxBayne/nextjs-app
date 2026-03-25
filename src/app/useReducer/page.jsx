@@ -1,4 +1,4 @@
-import UseReducerHookComponent from "@/components/UseReducerHookComponent.jsx";
+import UseReducerHookComponent from "@/components/pages/UseReducerHookComponent.jsx";
 
 
 export default function UseReducerHookPage()

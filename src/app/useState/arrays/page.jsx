@@ -1,4 +1,4 @@
-import UseStateHookWithArraysComponent from "@/components/UseStateHookWithArraysComponent.jsx";
+import UseStateHookWithArraysComponent from "@/components/pages/UseStateHookWithArraysComponent.jsx";
 
 
 export default function UseStateHookWithArraysPage()

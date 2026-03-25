@@ -1,4 +1,4 @@
-import TailwindCssComponent from "@/components/TailwindCssComponent.jsx";
+import TailwindCssComponent from "@/components/pages/TailwindCssComponent.jsx";
 
 
 export default function TailwindCssPage()

@@ -19,6 +19,7 @@ const COLLAPSED_WIDTH = "65px";
 export default function DrawerComponent({ drawerWidth, isDrawerOpen, closeDrawerCallback }) {
   const [materialUIMenuOpen, setMaterialUIMenuOpen] = React.useState(false);
   const [tailwindcssMenuOpen, setTailwindcssMenuOpen] = React.useState(false);
+  const [shadCNMenuOpen, setShadCNMenuOpen] = React.useState(false);
   const [useStateMenuOpen, setUseStateMenuOpen] = React.useState(false);
   const [useContextMenuOpen, setUseContextMenuOpen] = React.useState(false);
   const [useEffectMenuOpen, setUseEffectMenuOpen] = React.useState(false);
@@ -99,6 +100,7 @@ export default function DrawerComponent({ drawerWidth, isDrawerOpen, closeDrawer
         {renderMenuItem("/products", <InventoryIcon fontSize="small" />, "Products")}
         {renderCollapseMenu(materialUIMenuOpen, setMaterialUIMenuOpen, [{ href: "/materialUI", text: "Material UI" }], <AppsIcon fontSize="small" />, "Material UI")}
         {renderCollapseMenu(tailwindcssMenuOpen, setTailwindcssMenuOpen, [{ href: "/tailwindcss", text: "tailwind" }], <AppsIcon fontSize="small" />, "TailWind Css")}
+        {renderCollapseMenu(shadCNMenuOpen, setShadCNMenuOpen, [{ href: "/shadCN", text: "ShadCN" }], <AppsIcon fontSize="small" />, "ShadCN Components")}
         {renderCollapseMenu(useStateMenuOpen, setUseStateMenuOpen, [{ href: "/useState", text: "useState" }, { href: "/useState/arrays", text: "With Arrays" }, { href: "/useState/forms", text: "With Forms" }, { href: "/useState/loanForm", text: "Loan Form" }], <WebhookIcon fontSize="small" />, "Hook (useState)")}
         {renderCollapseMenu(useContextMenuOpen, setUseContextMenuOpen, [{ href: "/useContext", text: "UseContext" }], <WebhookIcon fontSize="small" />, "Hook (useContext)")}
         {renderCollapseMenu(useEffectMenuOpen, setUseEffectMenuOpen, [{ href: "/useEffect", text: "UseEffect" }], <WebhookIcon fontSize="small" />, "Hook (useEffect)")}

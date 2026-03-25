@@ -1,4 +1,4 @@
-import UseStateHookComponent from "@/components/UseStateHookComponent.jsx";
+import UseStateHookComponent from "@/components/pages/UseStateHookComponent.jsx";
 
 
 export default function UseStateHookPage()

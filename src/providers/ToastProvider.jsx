@@ -7,7 +7,7 @@ import * as React from 'react';
 import { ToastContext } from "@/contexts/ToastContext.js";
 
 //import Material UI Components
-import ToastComponent from '@/components/ToastComponent.jsx'
+import ToastComponent from '@/components/pages/ToastComponent.jsx'
 
 //2- Create Context Provider like Component to wrap consumed Components
 export default function ToastProvider({ children }) 

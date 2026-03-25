@@ -1,4 +1,4 @@
-import UseStateHookWithFormsComponent from "@/components/UseStateHookWithFormsComponent.jsx";
+import UseStateHookWithFormsComponent from "@/components/pages/UseStateHookWithFormsComponent.jsx";
 
 
 export default function UseStateHookWithFormsPage()
